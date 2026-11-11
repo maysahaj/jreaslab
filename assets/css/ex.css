@@ -939,3 +939,198 @@ html {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   }
 }
+
+
+/* ==============================
+   JREASLAB NAVBAR
+============================== */
+
+.jreas-header {
+    position: fixed;
+    top: 18px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 0 4%;
+}
+
+.jreas-navbar {
+    width: 100%;
+    min-height: 82px;
+    padding: 12px 30px;
+    background: #101b36;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+
+.jreas-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.jreas-brand img {
+    width: 145px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation */
+
+.jreas-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.jreas-nav-links .nav-link {
+    color: #d5d9e5;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.jreas-nav-links .nav-link:hover,
+.jreas-nav-links .nav-link.active {
+    color: #ffffff;
+}
+
+/* Actions */
+
+.jreas-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.language-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 11px 18px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.language-btn:hover {
+    background: white;
+    color: #101b36;
+}
+
+.contact-btn {
+    background: #f4f2ed;
+    color: #101b36;
+    padding: 14px 23px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-btn span {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.contact-btn:hover {
+    background: #d9e4ff;
+    color: #101b36;
+    transform: translateY(-2px);
+}
+
+/* Mobile Button */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    margin: 6px;
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+
+    .jreas-header {
+        top: 10px;
+        padding: 0 3%;
+    }
+
+    .jreas-navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .jreas-nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px 10px;
+        order: 3;
+    }
+
+    .jreas-nav-links.show {
+        display: flex;
+    }
+
+    .jreas-actions {
+        display: none;
+        width: 100%;
+        order: 4;
+        padding: 10px;
+    }
+
+    .jreas-nav-links.show + .jreas-actions {
+        display: flex;
+    }
+
+    .jreas-brand img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .jreas-navbar {
+        padding: 12px 15px;
+    }
+
+    .jreas-brand img {
+        width: 105px;
+    }
+
+    .jreas-actions {
+        gap: 10px;
+    }
+
+    .contact-btn {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+}

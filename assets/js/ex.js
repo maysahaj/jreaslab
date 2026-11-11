@@ -89,3 +89,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("show");
+
+    const isOpen = navLinks.classList.contains("show");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+});
+
+document.querySelectorAll(".jreas-nav-links .nav-link")
+.forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        document.querySelectorAll(".jreas-nav-links .nav-link")
+        .forEach(item => item.classList.remove("active"));
+
+        this.classList.add("active");
+
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
